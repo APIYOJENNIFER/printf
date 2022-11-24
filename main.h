@@ -10,4 +10,5 @@ void print_as_it_is(const char * const p, int *i, int x);
 int is_conversion_specifier(char c);
 int format_specifier_elements_number(const char* const p, int i);
 int get_conversion_type(char c);
+void print_base(int b, int n);
 #endif
