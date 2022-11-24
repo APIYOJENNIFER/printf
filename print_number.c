@@ -22,3 +22,15 @@ void print_minus(int *n)
 		_putchar('-');
 	(*n) = absolute((*n));
 }
+
+/**
+ * print_positive - makes agiven number positive
+ * and then prints it out
+ * @n: number to be converted and printed
+ */
+
+void print_positive(int n)
+{
+	n = absolute(n);
+	print_base(10, n);
+}

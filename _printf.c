@@ -61,7 +61,7 @@ void print_char_int(const char * const p, int *i, int n, int x)
 			print_number(n);
 			break;
 		case 'u':
-			print_number(n);
+			print_positive(n);
 			break;
 		case 'b':
 			print_base(2, n);

@@ -15,5 +15,8 @@ void print_string(char *str);
 void print_str(char *str);
 void print_strin(const char * const p, int *i, char *s_s, int x);
 void print_minus(int *n);
+void print_positive(int n);
+void checks_state(char d, int z);
+void print_hex(int num, char v);
 
 #endif
