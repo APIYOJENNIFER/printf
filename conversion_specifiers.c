@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * format_specifier_elements_number - returns the position of a conversio
  * n speciefer, which is also the number of character that
@@ -8,6 +9,7 @@
  * Return: an non-zero integer representing the position of conversion
  *      specifier in a formart specifier, otherwise a zero value
  */
+
 int format_specifier_elements_number(const char * const p, int i)
 {
 	int format_specifier_element_num = 0;
@@ -19,6 +21,7 @@ int format_specifier_elements_number(const char * const p, int i)
 	}
 	return (format_specifier_element_num);
 }
+
 /**
  * is_conversion_specifier - checks if a character is a conversion sp
  * ectfier

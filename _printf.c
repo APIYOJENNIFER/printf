@@ -27,6 +27,8 @@ int _printf(const char * const format, ...)
 				print_as_it_is(format, &format_index, x);
 			else if (get_conversion_type(format[format_index - 1 + x]) < 9)
 				print_char_int(format, &format_index, va_arg(ap, int), x);
+			else if (get_conversion_type(format[format_index - 1 + x]) < 11)
+				print_strin(format, &format_index, va_arg(ap, char *), x);
 			continue;
 		}
 		else
@@ -53,6 +55,8 @@ void print_char_int(const char * const p, int *i, int n, int x)
 			_putchar(n);
 			break;
 		case 'd':
+			print_number(n);
+			break;
 		case 'i':
 			print_number(n);
 			break;
