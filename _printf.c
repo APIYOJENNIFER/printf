@@ -70,6 +70,38 @@ void print_char_int(const char * const p, int *i, int n, int x)
 	}
 }
 /**
+ * print_strin - do something
+ * @p: ..
+ * @i: ..
+ * @s_s: ..
+ * @x: ..
+ */
+void print_strin(const char * const p, int *i, char *s_s, int x)
+{
+	while (x)
+	{
+		switch (p[*i])
+		{
+		case 's':
+			print_string(s_s);
+			break;
+		case 'S':
+			print_str(s_s);
+			break;
+		default:
+			/**
+			*if (is_flag(p[*i]))
+			*	print_flag(n, p[*i]);
+			*else
+			*/
+			_putchar(p[*i]);
+			break;
+		}
+		(*i) += 1;
+		x--;
+	}
+}
+/**
  * print_as_it_is - do something
  * @p: ..
  * @i: ..
