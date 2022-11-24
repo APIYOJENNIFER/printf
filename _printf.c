@@ -24,12 +24,19 @@ int _printf(const char * const format, ...)
 			format_index += 1;
 
 			if (get_conversion_type(format[format_index - 1 + x]) == -1)
-				print_as_it_is(format, &format_index, x);
+			{
+				if (format[format_index] =='%')
+					_putchar(format[format_index]);
+				else
+				{
+					_putchar('%');
+					_putchar(format[format_index]);
+				}
+			}
 			else if (get_conversion_type(format[format_index - 1 + x]) < 9)
 				print_char_int(format, &format_index, va_arg(ap, int), x);
 			else if (get_conversion_type(format[format_index - 1 + x]) < 11)
 				print_strin(format, &format_index, va_arg(ap, char *), x);
-			continue;
 		}
 		else
 			_putchar(format[format_index]);
@@ -72,6 +79,7 @@ void print_char_int(const char * const p, int *i, int n, int x)
 		(*i) += 1;
 		x--;
 	}
+	(*i) -= 1;
 }
 /**
  * print_strin - do something
@@ -104,6 +112,7 @@ void print_strin(const char * const p, int *i, char *s_s, int x)
 		(*i) += 1;
 		x--;
 	}
+	(*i) -= 1;
 }
 /**
  * print_as_it_is - do something

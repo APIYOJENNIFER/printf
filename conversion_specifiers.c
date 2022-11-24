@@ -12,14 +12,20 @@
 
 int format_specifier_elements_number(const char * const p, int i)
 {
+	int ub;
 	int format_specifier_element_num = 0;
+	int lb = i;
 
-	while (!is_conversion_specifier(p[i]))
+	while ((!is_conversion_specifier(p[i])) && (p[i] != '\0'))
 	{
 		format_specifier_element_num += 1;
 		i += 1;
 	}
-	return (format_specifier_element_num);
+	ub = i;
+
+	if (p[i] != '\0' && checker(p, lb, ub))
+		return (format_specifier_element_num);
+	return (0);
 }
 
 /**
@@ -68,4 +74,29 @@ int get_conversion_type(char c)
 	if (conversion_specifier_index < conversion_specifier_size)
 		return (conversion_specifier_index);
 	return (-1);
+}
+
+int checker(const char * const g, int lb, int ub)
+{
+	char x, y;
+	int k = ub - lb;
+
+	while (k)
+	{
+		for (x = 'A', y = 'a'; x <= 'Z' || y <= 'z'; x++, y++)
+		{
+			if (g[lb] == x || g[lb] == y)
+			{
+				if (x == 'l' || x == 'h')
+					continue;
+				else if (y == 'l' || y =='h')
+					continue;
+				else
+					return (0);
+			}
+		}
+		lb++;
+		k--;
+	}
+	return (1);
 }

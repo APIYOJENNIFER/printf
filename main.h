@@ -18,5 +18,7 @@ void print_minus(int *n);
 void print_positive(int n);
 void checks_state(char d, int z);
 void print_hex(int num, char v);
+int checker(const char * const g, int lb, int ub);
+int checker(const char * const g, int lb, int ub);
 
 #endif
